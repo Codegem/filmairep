@@ -1,3 +1,8 @@
+suinstaliuoti sass []
+Centre search + input []
+Fetchas []
+Atvaizdavimas lenteleje jeigu randamas filmas []
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
