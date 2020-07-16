@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Fetch from '../fetch/Fetch'
+// import Fetch from '../fetch/Fetch'
 import './main.css'
 
 export default class Main extends Component {
@@ -8,17 +8,25 @@ export default class Main extends Component {
         this.state = {
             title: 'Filmu Search',
             searchTerm: '',
-            loading: true
+            loading: false,
+            filmas: {}
         }
     }
 
     formaSubmit(event){
         // console.log(event.target.value)
         event.preventDefault();
-        Fetch.search(this.state.searchTerm)
-            .then(
-                console.log("kazkas ivyko"))
-            .then(console.log("nepaejo"))
+        const API_URL = 'https://www.omdbapi.com/?apikey=924a38e3';
+        const url = `${API_URL}&t='${this.state.searchTerm}`;
+        console.log(url)
+        return fetch(url)
+        .then(response => response.json())
+        .then(result => {
+            this.setState({
+                filmas: result
+            })
+        console.log(this.state.filmas)
+        })
     }
 
     searchTermChanged(event){
@@ -47,6 +55,7 @@ export default class Main extends Component {
                         Ieskoti
                         </button>
                     </form>
+                    {this.state.filmas}
                     {this.state.loading ? <img src="https://media1.giphy.com/media/xTk9ZvMnbIiIew7IpW/giphy.gif" alt="load"/> : "" }
                 </div>
             </div>
