@@ -3,8 +3,9 @@
 }
 
 .centras h1 {
-  margin-top: 2rem;
+  margin-top: auto;
   text-align: center;
+  color: white;
 }
 
 .centras input {
@@ -16,6 +17,10 @@
 .centras button {
   margin: 3px;
   color: white;
-  height: 2rem;
+  height: 3rem;
+}
+
+body {
+  background-image: url(https://i.pinimg.com/originals/78/2d/8a/782d8a4346ab154282ec2e8dbb826e00.gif);
 }
 /*# sourceMappingURL=main.css.map */
