@@ -1,28 +1,26 @@
-import React, {Component} from "react"
+import React  from "react"
 
-export default Result_table(props){
+export default function Result_table(props){
     return (
         <div className="container">
 
             <table className="table table-dark">
                 <thead>
                 <tr>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Year</th>
+                    <th scope="col">Genre</th>
+                    <th scope="col">Actors</th>
+                    <th scope="col">Poster</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <th scope="row"></th>
-                    <td>{props.duomenuPakas.vienasPavadinimas}</td>
-                    <td>{props.duomenuPakas.vienasPavadinimas}</td>
-                    <td>{props.duomenuPakas.vienasPavadinimas}</td>
-                    <td>{props.duomenuPakas.vienasPavadinimas}</td>
-                    <td><img src = {props.duomenuPakas.vienasPavadinimas}/></td>
+                    <td>{props.result.Title}</td>
+                    <td>{props.result.Year}</td>
+                    <td>{props.result.Genre}</td>
+                    <td>{props.result.Actors}</td>
+                    <td><img src ={props.result.Poster} alt = ""/></td>
 
                 </tr>
                 </tbody>

@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-// import Fetch from '../fetch/Fetch'
+import Result_table from "../result_table/Result_table"
 import './main.css'
 
 export default class Main extends Component {
@@ -55,9 +55,9 @@ export default class Main extends Component {
                         Ieskoti
                         </button>
                     </form>
-                    {this.state.filmas}
                     {this.state.loading ? <img src="https://media1.giphy.com/media/xTk9ZvMnbIiIew7IpW/giphy.gif" alt="load"/> : "" }
                 </div>
+                <Result_table result={this.state.filmas}/>
             </div>
         )
     }
