@@ -1,10 +1,11 @@
 import React  from "react"
+import './lentele.css'
 
 export default function Result_table(props){
     return (
         <div className="container">
 
-            <table className="table table-dark">
+            <table className="table table-dark" id="rainbow">
                 <thead>
                 <tr>
                     <th scope="col">Title</th>
@@ -20,7 +21,7 @@ export default function Result_table(props){
                     <td>{props.result.Year}</td>
                     <td>{props.result.Genre}</td>
                     <td>{props.result.Actors}</td>
-                    <td><img src ={props.result.Poster} alt = ""/></td>
+                    <td><img id="img" src ={props.result.Poster} alt = ""/></td>
 
                 </tr>
                 </tbody>
