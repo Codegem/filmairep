@@ -3,6 +3,7 @@
 }
 
 .centras h1 {
+  margin-top: 2rem;
   text-align: center;
 }
 
@@ -12,8 +13,9 @@
   outline: none;
 }
 
-.centras a {
+.centras button {
   margin: 3px;
   color: white;
+  height: 2rem;
 }
 /*# sourceMappingURL=main.css.map */
