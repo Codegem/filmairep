@@ -5,6 +5,10 @@ body {
 	height: 100vh;
 }
 
+#sorry{
+	color: white;
+}
+
 *, *::before, *::after {
 	box-sizing: border-box;
 }
@@ -54,5 +58,5 @@ body {
     #img{
         height: 150px;
         width: 150px;
-    }
+	}
 }

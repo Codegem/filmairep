@@ -2,7 +2,12 @@ import React  from "react"
 import './lentele.css'
 
 export default function Result_table(props){
-
+    if(props.result.Response === "False"){
+    return(
+        <p id="sorry">Atsiprasome Filmas nerastas</p>
+    )
+    }
+    else{
     return(
             <div className="container">
 
@@ -29,4 +34,5 @@ export default function Result_table(props){
             </table>
         </div>
         )
+}
 }
