@@ -1,7 +1,9 @@
-suinstaliuoti sass []
-Centre search + input []
-Fetchas []
-Atvaizdavimas lenteleje jeigu randamas filmas []
+suinstaliuoti sass [+]
+Centre search + input [+]
+Fetchas [+]
+Atvaizdavimas lenteleje jeigu randamas filmas [+]
+Stilizavimas [+]
+Lenteliu paslepimas tik uzkrovus puslapi [x]
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
