@@ -1,20 +1,21 @@
 import React, {Component} from 'react'
-import Result_table from "../result_table/Result_table"
+import Result_table from '../result_table/Result_table'
+import loading from '../main/loading.gif'
 import './main.css'
 
 export default class Main extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             title: 'Filmu Search',
             searchTerm: '',
             loading: false,
-            filmas: {}
+            filmas: {},
+            temp: null
         }
     }
 
     formaSubmit(event){
-        // console.log(event.target.value)
         event.preventDefault();
         const API_URL = 'https://www.omdbapi.com/?apikey=924a38e3';
         const url = `${API_URL}&t='${this.state.searchTerm}`;
@@ -23,9 +24,10 @@ export default class Main extends Component {
         .then(response => response.json())
         .then(result => {
             this.setState({
-                filmas: result
+                filmas: result,
+                loading: false,
+                temp: 1
             })
-        console.log(this.state.filmas)
         })
     }
 
@@ -33,6 +35,12 @@ export default class Main extends Component {
         // console.log(event.target.value)
         this.setState({
             searchTerm: event.target.value
+        })
+    }
+
+    paspausta(event){
+        this.setState({
+            loading: true
         })
     }
 
@@ -51,14 +59,17 @@ export default class Main extends Component {
                         value={searchTerm}/>
                         <button 
                         type = "submit" 
-                        className="btn btn-primary">
+                        className="btn btn-primary"
+                        onClick={(event) => this.paspausta(event)}>
                         Ieskoti
                         </button>
                     </form>
-                    {this.state.loading ? <img src="https://media1.giphy.com/media/xTk9ZvMnbIiIew7IpW/giphy.gif" alt="load"/> : "" }
                 </div>
-                <Result_table result={this.state.filmas}/>
+                {this.state.loading ? <img src= {loading} alt="load" id="loading"/> : "" }
+                {this.state.temp === null ? "" : <Result_table result={this.state.filmas}/>}
             </div>
         )
     }
 }
+
+
