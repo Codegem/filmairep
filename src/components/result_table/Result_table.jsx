@@ -2,8 +2,9 @@ import React  from "react"
 import './lentele.css'
 
 export default function Result_table(props){
-    return (
-        <div className="container">
+
+    return(
+            <div className="container">
 
             <table className="table table-dark" id="rainbow">
                 <thead>
@@ -27,5 +28,5 @@ export default function Result_table(props){
                 </tbody>
             </table>
         </div>
-    )
+        )
 }
