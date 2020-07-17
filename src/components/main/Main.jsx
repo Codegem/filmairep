@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import Result_table from '../result_table/Result_table'
 import loading from '../main/loading.gif'
 import './main.css'
-
 export default class Main extends Component {
     constructor(props){
         super(props);
@@ -11,7 +10,7 @@ export default class Main extends Component {
             searchTerm: '',
             loading: false,
             filmas: {},
-            temp: null
+            temp:null
         }
     }
 
@@ -19,14 +18,13 @@ export default class Main extends Component {
         event.preventDefault();
         const API_URL = 'https://www.omdbapi.com/?apikey=924a38e3';
         const url = `${API_URL}&t='${this.state.searchTerm}`;
-        console.log(url)
         return fetch(url)
         .then(response => response.json())
         .then(result => {
             this.setState({
                 filmas: result,
                 loading: false,
-                temp: 1
+                temp:1
             })
         })
     }
@@ -71,5 +69,3 @@ export default class Main extends Component {
         )
     }
 }
-
-
